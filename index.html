@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://unpkg.com/" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Gerencie suas finanças intuitivamente." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Devfinances" />
+    <meta property="og:site_name" content="Devfinances" />
+    <meta
+      property="og:description"
+      content="Gerencie suas transações intuitivamente."
+    />
+    <!-- <meta property="og:url" content="URL" /> -->
+    <meta property="og:locale" content="pt-BR" />
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:title" content="Devfinaces" />
+    <meta
+      property="twitter:description"
+      content="Gerencie suas transações intuitivamente."
+    />
+    <!-- <meta property="twitter:url" content="URL" /> -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#011826" />
+    <title>Devfinaces</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/modern-normalize@1.1.0/modern-normalize.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/main.css" />
+    <link rel="manifest" href="/manifest.json" />
+  </head>
+  <body>
+    <header id="page-header">
+      <h1>
+        <img src="/logo.svg" alt="Logo" width="248" height="48" />
+      </h1>
+    </header>
+
+    <main>
+      <section id="transactions-summary">
+        <h2 class="sr-only">Sumário das transações</h2>
+
+        <div class="card card-incomes">
+          <div class="card-header">
+            <span>Entradas</span>
+
+            <img src="/arrow-up.svg" alt="Entradas" width="24" height="24" />
+          </div>
+
+          <span class="card-value">R$ 0,00</span>
+        </div>
+
+        <div class="card card-expenses">
+          <div class="card-header">
+            <span>Saídas</span>
+
+            <img src="/arrow-down.svg" alt="Saídas" width="24" height="24" />
+          </div>
+
+          <span class="card-value">R$ 0,00</span>
+        </div>
+
+        <div class="card card-total">
+          <div class="card-header">
+            <span>Total</span>
+
+            <img src="/dollar.svg" alt="Total" width="24" height="24" />
+          </div>
+
+          <span class="card-value">R$ 0,00</span>
+        </div>
+      </section>
+
+      <section id="transactions">
+        <h2 class="sr-only">Transações</h2>
+
+        <button class="btn-green new-transaction" type="button">
+          Nova transação
+        </button>
+
+        <table id="transactions-table">
+          <summary class="sr-only">Tabela de Transações</summary>
+
+          <thead>
+            <tr>
+              <th>Descrição</th>
+              <th>Valor</th>
+              <th>Data</th>
+              <th>Remover</th>
+            </tr>
+          </thead>
+
+          <tbody></tbody>
+        </table>
+      </section>
+    </main>
+
+    <div class="modal-overlay" id="new-transaction-modal">
+      <div class="modal">
+        <div class="modal-header">
+          <h2>Nova transação</h2>
+        </div>
+
+        <div class="modal-content">
+          <form id="new-transaction-form">
+            <label for="description" class="sr-only">Descrição</label>
+            <input
+              type="text"
+              name="description"
+              id="description"
+              placeholder="Descrição"
+            />
+
+            <label for="amount" class="sr-only">Valor</label>
+            <input
+              type="number"
+              name="amount"
+              id="amount"
+              step="1"
+              placeholder="0,00"
+            />
+
+            <div class="btn-group">
+              <button type="button" class="btn-red-outlined cancel">
+                Cancelar
+              </button>
+
+              <button type="submit" class="btn-green">Confirmar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/scripts/main.ts"></script>
+  </body>
+</html>

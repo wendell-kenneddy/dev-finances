@@ -1,0 +1,270 @@
+html {
+  --grayish-white: #f0f2f5;
+  --light-blue: #363f5f;
+  --dark-blue: #011826;
+  --light-gray: #303030;
+  --light-red: #ff2121;
+  --light-green: #49aa26;
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 0 5px 6px rgb(0 0 0 / 20%);
+
+  font-size: 87.5%; /* 14px */
+}
+
+body {
+  background: var(--grayish-white);
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.btn-green {
+  background: var(--light-green);
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  box-shadow: var(--shadow-md);
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+  transition: filter 0.2s;
+}
+
+.btn-green:hover {
+  filter: brightness(0.9);
+}
+
+.btn-red-outlined {
+  background: none;
+  border: 1px solid var(--light-red);
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  box-shadow: var(--shadow-md);
+  font-weight: 500;
+  color: var(--light-red);
+  cursor: pointer;
+}
+
+/* HEADER */
+
+#page-header {
+  background: var(--dark-blue);
+  padding: 2rem 0 10rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* HEADER */
+
+main {
+  margin: -8rem auto 1.5rem;
+  width: 90vw;
+  max-width: 720px;
+}
+
+/* TRANSACTIONS SUMMARY */
+
+#transactions-summary {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 4px;
+  padding: 1.5rem 2rem;
+  box-shadow: var(--shadow-md);
+  overflow: auto;
+  color: var(--light-blue);
+}
+
+.card-header {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-value {
+  white-space: nowrap;
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+/* TRANSACTIONS TABLE */
+
+#transactions {
+  margin-top: 1.5rem;
+  width: 100%;
+  max-width: 100%;
+  overflow: auto;
+}
+
+.new-transaction {
+  margin-bottom: 1rem;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0 0.5rem;
+  color: var(--light-blue);
+}
+
+table thead tr th:first-child,
+table tbody tr td:first-child {
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+
+table thead tr th:last-child,
+table tbody tr td:last-child {
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+
+table thead th {
+  background-color: #fff;
+  padding: 1rem;
+
+  text-align: left;
+  font-weight: 400;
+}
+
+table tbody td {
+  background-color: #fff;
+  padding: 1rem;
+  white-space: nowrap;
+
+  text-align: left;
+}
+
+table tbody tr {
+  opacity: 0.7;
+}
+
+table tbody tr:hover {
+  opacity: 1;
+}
+
+td.description {
+  color: var(--light-blue);
+}
+
+td.income {
+  color: var(--light-green);
+}
+
+td.expense {
+  color: var(--light-red);
+}
+
+.remove-transaction {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* MODAL */
+
+.modal-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1024;
+  top: 0;
+  left: 0;
+  place-items: center;
+  display: none;
+}
+
+.modal-overlay.active {
+  display: grid;
+}
+
+.modal {
+  background: var(--grayish-white);
+  border-radius: 2px;
+  padding: 2.4rem;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: var(--shadow-lg);
+}
+
+.modal-header {
+  margin-bottom: 1rem;
+  color: var(--light-blue);
+}
+
+.modal-content {
+  margin-bottom: 1rem;
+}
+
+/* FORM */
+
+input {
+  background: #fff;
+  border: none;
+  border-radius: 2px;
+  padding: 0.8rem;
+  width: 100%;
+  display: block;
+}
+
+input:not(:first-child) {
+  margin-top: 1rem;
+}
+
+.btn-group {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-group button {
+  padding: 1rem 1.5rem;
+  width: 45%;
+}
+
+.btn-group .btn-red-outlined {
+  transition: all 0.2s;
+  opacity: 0.7;
+}
+
+.btn-group .btn-red-outlined:hover {
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 93.75%;
+  }
+
+  #transactions-summary {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 100%;
+  }
+}
