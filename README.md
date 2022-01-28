@@ -30,6 +30,7 @@ To develop this app, I used these technologies:
 ## ✨ Features
 
 - Create, Read and Delete transactions
+- PWA features such as offline support
 - Responsivity
 
 ---
