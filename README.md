@@ -12,7 +12,7 @@
 
 ## 📕 About
 
-Ropsci is a Rock, Paper, Scissors game app.
+Devfinances is a transactions management about.
 
 ---
 
